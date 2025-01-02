@@ -39,7 +39,7 @@ publishing {
         maven(MavenPublication) {
             groupId = 'com.exeample.clockHolder'
             artifactId = 'clock-holder'
-            version = '0.0.2'
+            version = '0.0.1'
 
             from components.java
         }
