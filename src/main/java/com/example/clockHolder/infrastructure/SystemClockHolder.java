@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 import java.time.*;
 import java.time.format.DateTimeParseException;
 
-@Component
 public class SystemClockHolder implements ClockHolder {
     @Override
     public long millis() {
