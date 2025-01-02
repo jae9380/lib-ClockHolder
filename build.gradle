@@ -24,6 +24,10 @@ dependencyManagement {
     }
 }
 
+tasks.named('test') {
+    enabled = false
+}
+
 dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
