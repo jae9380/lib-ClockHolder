@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'com.example'
-version = '0.0.1'
+version = '0.0.2'
 
 java {
     toolchain {
@@ -39,12 +39,22 @@ publishing {
         maven(MavenPublication) {
             groupId = 'com.exeample.clockHolder'
             artifactId = 'clock-holder'
-            version = '0.0.1'
+            version = '0.0.2'
 
             from components.java
         }
     }
 }
+
+jar {
+    manifest {
+        attributes(
+                'Implementation-Title': 'ClockHolder Library',
+                'Implementation-Version': version
+        )
+    }
+}
+
 tasks.named('test') {
     useJUnitPlatform()
 }
