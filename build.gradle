@@ -34,6 +34,17 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.exeample.clockHolder'
+            artifactId = 'clock-holder'
+            version = '0.0.2'
+
+            from components.java
+        }
+    }
+}
 tasks.named('test') {
     useJUnitPlatform()
 }
