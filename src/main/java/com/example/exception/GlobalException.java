@@ -1,6 +1,6 @@
-package com.example.clockHolder.exception;
+package com.example.exception;
 
-import static com.example.clockHolder.exception.ErrorCode.BAD_INPUT_FORMAT;
+import static com.example.exception.ErrorCode.BAD_INPUT_FORMAT;
 
 public class GlobalException extends ClockHodlerException {
     public GlobalException(ErrorCode e) {
