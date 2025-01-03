@@ -1,8 +1,7 @@
-package com.example.clockHolder.infrastructure;
+package com.example.infrastructure;
 
-import com.example.clockHolder.service.port.ClockHolder;
-import com.example.clockHolder.exception.GlobalException;
-import org.springframework.stereotype.Component;
+import com.example.exception.GlobalException;
+import com.example.service.port.ClockHolder;
 
 import java.time.*;
 import java.time.format.DateTimeParseException;

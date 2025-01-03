@@ -1,4 +1,4 @@
-package com.example.clockHolder.service.port;
+package com.example.service.port;
 
 import java.time.LocalDate;
 

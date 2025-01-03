@@ -1,47 +1,19 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '3.3.7' apply false
-    id 'io.spring.dependency-management' version '1.1.7'
     id 'maven-publish'
 }
 
 group = 'com.example'
 version = '0.0.3'
 
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
-    }
-}
-
 repositories {
     mavenCentral()
-}
-
-dependencyManagement {
-    imports {
-        mavenBom org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
-    }
-}
-
-tasks.named('test') {
-    enabled = false
-}
-
-dependencies {
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
-    testCompileOnly 'org.projectlombok:lombok'
-
-    implementation 'org.springframework.boot:spring-boot-starter'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 publishing {
     publications {
         maven(MavenPublication) {
-            groupId = 'com.exeample.clockHolder'
+            groupId = 'com.exeample'
             artifactId = 'clock-holder'
             version = '0.0.3'
 
@@ -50,10 +22,14 @@ publishing {
     }
 }
 
-jar {
-    destinationDirectory = file("$buildDir/libs")
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
 }
 
-tasks.named('test') {
+test {
     useJUnitPlatform()
 }
